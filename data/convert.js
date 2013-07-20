@@ -1,12 +1,13 @@
-/*globals self, CoffeeScript */
+/*globals CoffeeScript */
 
-self.on('click', function () {
+function cmConvertClick (node, data) {
     'use strict';
     var i, rct, js,
         coffee = '',
         ws = window.getSelection(),
         fn, fnParent,
-        jsAsNode = document.createElement('pre');
+        jsAsNode = document.createElement('pre'),
+        opts = JSON.parse(data);
     
     if (!ws.toString().trim()) {
         ws.selectAllChildren(document.body);
@@ -26,7 +27,9 @@ self.on('click', function () {
 
     js = CoffeeScript.compile(coffee);
     
-    // js = js.replace(/^\(function\(\) \{\n/, '').replace(/\}\)\.call\(this\);\n*$/, ''); // works--might enable by preference
+    if (opts.remove_IIFEs) {
+        js = js.replace(/^\(function\(\) \{\n/, '').replace(/\}\)\.call\(this\);\n*$/, '').replace(/^ {2}/gm, '');
+    }
 
     jsAsNode.appendChild(document.createTextNode(js));
     
@@ -34,5 +37,4 @@ self.on('click', function () {
     fn.parentNode.insertBefore(jsAsNode, fn);
     ws.removeAllRanges();
 
-});
-
+}

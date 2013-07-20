@@ -1,1 +1,37 @@
-{"license": "", "description": "Use the context menu to convert your original CoffeeScript grounds in place to expanded JavaScript code.", "contributors": [], "author": "brettz9", "url": "", "dependencies": ["api-utils", "addon-kit"], "version": "initial.rev68", "lib": "lib", "fullName": "french-press", "main": "main", "id": "jid0-uQoTMmF9BhMaHKUvIBUis9ihjx4", "name": "french-press"}
+{
+    "name": "french-press",
+    "version": "0.2.0",
+    "description": "Use the context menu to convert your original CoffeeScript grounds in place to expanded JavaScript code.",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/brettz9/french-press.git"
+    },
+    "preferences": [
+        {
+            "name": "auto_convert_coffee_files",
+            "type": "bool",
+            "description": "Automatically convert all CoffeeScript files to JavaScript",
+            "value": false,
+            "title": "'Auto-convert .coffee files"
+        },
+        {
+            "name": "remove_IIFEs",
+            "type": "bool",
+            "description": "Remove CoffeeScript Immediately Invoked Function Expressions (anonymous function wrapping)",
+            "value": true,
+            "title": "'Remove CoffeeScript IIFE (anonymous function wrapping)"
+        }
+    ],
+    "contributors": [],
+    "author": "Brett Zamir",
+    "keywords": [
+        "coffeescript"
+    ],
+    "url": "",
+    "dependencies": ["api-utils", "addon-kit"],
+    "lib": "lib",
+    "fullName": "french-press",
+    "main": "main",
+    "id": "jid0-uQoTMmF9BhMaHKUvIBUis9ihjx4"
+}
