@@ -1,6 +1,8 @@
-self.on('click', function () {
+/*globals self, CoffeeScript */
 
-    var js,
+self.on('click', function () {
+    'use strict';
+    var i, rct, js,
         coffee = '',
         ws = window.getSelection(),
         fn, fnParent,
@@ -9,11 +11,11 @@ self.on('click', function () {
     if (!ws.toString().trim()) {
         ws.selectAllChildren(document.body);
     }
-    fn = ws.focusNode,
+    fn = ws.focusNode;
     fnParent = fn.parentNode;
     
     // var coffee = ws.toString(), // The problem with this is that this toString() won't preserve newlines if as raw text in <pre> elements (as used on the CoffeeScript main page)
-    for (var i = 0, rct = ws.rangeCount; i < rct; i++) {
+    for (i = 0, rct = ws.rangeCount; i < rct; i++) {
         coffee += '\n\n' + ws.getRangeAt(i).toString(); // This doesn't work with line breaks in <pre> elements
     }
 
