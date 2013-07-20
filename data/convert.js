@@ -16,18 +16,18 @@ function cmConvertClick (node, data) {
             }
             return js;
         },
-        insertIntoTextArea = function (ta) {
+        insertIntoTextArea = function (ta, cb) {
             var taSS = ta.selectionStart,
                 taSE = ta.selectionEnd,
                 currValue = ta.value.slice(taSS, taSE),
-                val = convert(currValue);
+                val = typeof cb === 'function' ? cb(currValue) : cb;
             ta.value = ta.value.slice(0, taSS) + val + ta.value.slice(taSE);
             ta.setSelectionRange(taSS, taSS + val.length);
             ta.focus();
         };
 
     if (activeElement.nodeName.toLowerCase() === 'textarea') {
-        insertIntoTextArea(activeElement);
+        insertIntoTextArea(activeElement, convert);
         return;
     }
     
