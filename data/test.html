@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>SyntaxHighlighter Server Side Demo</title>
+	<script src="SyntaxHighlighter/xregexp-min.js"></script>
+	<script src="SyntaxHighlighter/src/js/shCore.js"></script>
+	<script src="SyntaxHighlighter/src/js/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/styles/shThemeDefault.css" />
+</head>
+
+<body>
+
+<script type="text/plain" id="input">
+function helloWorld()
+{
+	// this is great!
+	for(var i = 0; i <= 1; i++)
+		alert("yay");
+}
+</script>
+
+<script>
+var brush = new SyntaxHighlighter.brushes.JScript(),
+	code = document.getElementById('input').innerHTML,
+	html;
+	
+brush.init({ toolbar: false, gutter: false });
+html = brush.getHtml(code);
+
+document.write(html);
+</script>
+
+</body>
+</html>
