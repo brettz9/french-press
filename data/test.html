@@ -22,6 +22,13 @@ function helloWorld()
 </script>
 
 <script>
+// See also https://github.com/marijnh/CodeMirror/blob/master/demo/runmode.html for an alternative
+
+/* Todos:
+1) Mozilla shim for window.getMatchedCSSRules in order to find (along with styles: http://stackoverflow.com/a/12926339/271577 and http://stackoverflow.com/a/5830517/271577 ) the applicable style rules: https://gist.github.com/ydaniv/3033012
+
+*/
+
 var brush = new SyntaxHighlighter.brushes.JScript(),
 	code = document.getElementById('input').innerHTML,
 	html;
