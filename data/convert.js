@@ -7,7 +7,29 @@ function cmConvertClick (node, data) {
         ws = window.getSelection(),
         fn, fnParent,
         jsAsNode = document.createElement('pre'),
-        opts = JSON.parse(data);
+        opts = JSON.parse(data),
+        activeElement = document.activeElement,
+        convert = function (coffee) {
+            var js = CoffeeScript.compile(coffee);
+            if (opts.remove_IIFEs) {
+                js = js.replace(/^\(function\(\) \{\n/, '').replace(/\}\)\.call\(this\);\n*$/, '').replace(/^ {2}/gm, '');
+            }
+            return js;
+        },
+        insertIntoTextArea = function (ta) {
+            var taSS = ta.selectionStart,
+                taSE = ta.selectionEnd,
+                currValue = ta.value.slice(taSS, taSE),
+                val = convert(currValue);
+            ta.value = ta.value.slice(0, taSS) + val + ta.value.slice(taSE);
+            ta.setSelectionRange(taSS, taSS + val.length);
+            ta.focus();
+        };
+
+    if (activeElement.nodeName.toLowerCase() === 'textarea') {
+        insertIntoTextArea(activeElement);
+        return;
+    }
     
     if (!ws.toString().trim()) {
         ws.selectAllChildren(document.body);
@@ -25,12 +47,8 @@ function cmConvertClick (node, data) {
         coffee = ws.toString();
     }
 
-    js = CoffeeScript.compile(coffee);
+    js = convert(coffee);
     
-    if (opts.remove_IIFEs) {
-        js = js.replace(/^\(function\(\) \{\n/, '').replace(/\}\)\.call\(this\);\n*$/, '').replace(/^ {2}/gm, '');
-    }
-
     jsAsNode.appendChild(document.createTextNode(js));
     
     ws.deleteFromDocument();
