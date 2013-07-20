@@ -16,6 +16,12 @@ function cmConvertClick (node, data) {
             }
             return js;
         },
+        /**
+        * Insert a supplied value into a textarea at the current selection start and end values (or use a function to convert the text at the current values into the new value), update the start and end
+        points according to the new text, and set focus on the supplied textarea element
+        * @param {HTMLTextAreaElement} ta Textarea element into which to insert
+        * @param {Function|String} cb Either a fixed string to insert at the current selection points or a callback to execute against the current value to return a new value
+        */
         insertIntoTextArea = function (ta, cb) {
             var taSS = ta.selectionStart,
                 taSE = ta.selectionEnd,
