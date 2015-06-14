@@ -1,12 +1,13 @@
 {
     "name": "french-press",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "description": "Convert your original CoffeeScript grounds in place to expanded JavaScript code (automatically or via context menu).",
     "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/brettz9/french-press.git"
     },
+    "main": "lib/main",
     "preferences": [
         {
             "name": "auto_convert_coffee_files",
@@ -29,5 +30,5 @@
         "coffeescript"
     ],
     "fullName": "french-press",
-    "id": "jid0-uQoTMmF9BhMaHKUvIBUis9ihjx4"
+    "id": "jid0-uQoTMmF9BhMaHKUvIBUis9ihjx4@jetpack"
 }

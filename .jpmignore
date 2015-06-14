@@ -1,0 +1,10 @@
+*.xpi
+.jpmignore
+.gitignore
+.bowerrc
+bower.json
+.git
+data/coffeescript/**
+!data/coffeescript/extras/coffee-script.js
+screenshots/
+tests/
