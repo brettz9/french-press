@@ -1,0 +1,22 @@
+{
+  "name": "french-press",
+  "version": "0.3.2",
+  "homepage": "https://github.com/brettz9/french-press",
+  "authors": [
+    "Brett Zamir <brettz9@yahoo.com>"
+  ],
+  "description": "Convert your original CoffeeScript grounds in place to expanded JavaScript code (automatically or via context menu).",
+  "main": "lib/main",
+  "keywords": [
+    "coffeescript"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+      "coffeescript": "1.9.x"
+  },
+  "ignore": [
+    "**/.*",
+    "test",
+    "tests"
+  ]
+}
