@@ -1,9 +1,12 @@
 *.xpi
+*.lnk
+
 .jpmignore
 .gitignore
 .bowerrc
-bower.json
 .git
+
+bower.json
 data/coffeescript/**
 !data/coffeescript/extras/coffee-script.js
 screenshots/
