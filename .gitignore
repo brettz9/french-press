@@ -2,3 +2,4 @@ data/coffeescript
 !data/coffeescript/extras/coffee-script.js
 *.lnk
 *.bat
+node_modules

@@ -5,6 +5,7 @@
     "license": "MIT",
     "description": "Convert your original CoffeeScript grounds in place to expanded JavaScript code (automatically or via context menu).",
     "dependencies": {
+        "js2coffee": "2.x"
     },
     "repository": {
         "type": "git",
