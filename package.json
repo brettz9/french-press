@@ -4,6 +4,9 @@
     "main": "lib/main",
     "license": "MIT",
     "description": "Convert your original CoffeeScript grounds in place to expanded JavaScript code (automatically or via context menu).",
+    "scripts": {
+        "prepublish": "bower install"
+    },
     "dependencies": {
     },
     "repository": {
