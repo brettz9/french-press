@@ -1,8 +1,4 @@
-data/coffeescript/*.*
-data/coffeescript/C*
-data/coffeescript/L*
-data/coffeescript/*/*
-data/coffeescript/extras/*
+data/coffeescript/**
 !data/coffeescript/extras/coffee-script.js
 *.lnk
 *.bat
