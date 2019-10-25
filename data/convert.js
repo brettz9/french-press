@@ -5,7 +5,7 @@ function cmConvertClick (node, data) {
     var i, rct, js,
         coffee = '',
         ws = window.getSelection(),
-        fn, fnParent,
+        fn,
         jsAsNode = document.createElement('pre'),
         opts = JSON.parse(data),
         activeElement = document.activeElement,
@@ -41,7 +41,7 @@ function cmConvertClick (node, data) {
         ws.selectAllChildren(document.body);
     }
     fn = ws.focusNode;
-    fnParent = fn.parentNode;
+    // fnParent = fn.parentNode;
     
     // var coffee = ws.toString(), // The problem with this is that this toString() won't preserve newlines if as raw text in <pre> elements (as used on the CoffeeScript main page)
     for (i = 0, rct = ws.rangeCount; i < rct; i++) {
